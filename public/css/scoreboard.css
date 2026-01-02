@@ -1,0 +1,113 @@
+/* --- Full-page background --- */
+body {
+  margin: 0;
+  padding: 50px;
+  text-align: center;
+  width: 100vw;
+  min-height: 100vh;
+  background-size: cover;       /* Cover the entire viewport */
+  background-position: center;  /* Center the image */
+  background-repeat: no-repeat; /* No tiling */
+  color: var(--text-light);
+  transition: background-image 0.3s ease-in-out;
+}
+
+/* Portrait orientation */
+@media (orientation: portrait) {
+  body {
+    background-image: url('/assets/background/bg-portrait.jpg');
+  }
+}
+
+/* Landscape orientation (redundant but explicit) */
+@media (orientation: landscape) {
+  body {
+    background-image: url('/assets/background/bg-landscape.jpg');
+  }
+}
+/* --- Scoreboard Heading --- */
+h1 {
+  font-size: 3em;
+  margin-bottom: 40px;
+  color: var(--red-primary);
+  text-shadow: 2px 2px var(--text-light);
+}
+
+/* --- Scoreboard Table --- */
+table {
+  width: 60%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  box-shadow: 0 8px 16px var(--bg-container);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--td-background); /* Slight transparency for table */
+}
+
+th, td {
+  padding: 15px 20px;
+  font-size: 1.2em;
+}
+
+th {
+  background-color: var(--red-primary);
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+tr:nth-child(even) {
+  background-color: var(--row-even);
+}
+
+tr:nth-child(odd) {
+  background-color: var(--row-odd);
+}
+
+tr:hover {
+  background-color: var(--row-hover);
+  transform: scale(1.02);
+  transition: all 0.2s ease-in-out;
+}
+
+td {
+  color: var(--td-color);
+}
+
+/* ===== Button Wrapper ===== */
+.button-wrapper {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ===== Back to Home Button ===== */
+.button-wrapper button {
+  padding: 14px 36px;
+  font-size: 1.15rem;
+  font-weight: bold;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--btn-orange);
+  color: var(--text-dark);
+  box-shadow:var(--bg-container);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.button-wrapper button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow:var(--bg-container);
+}
+
+/* Click effect */
+.button-wrapper button:active {
+  transform: scale(0.95);
+  box-shadow:var(--bg-container);
+}
+
+/* Enable glow */
+.button-wrapper button {
+  animation: pulseGlow 2.5s infinite;
+}

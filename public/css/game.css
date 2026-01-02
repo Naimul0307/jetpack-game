@@ -1,0 +1,35 @@
+/* --- Full-page body for game --- */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  background-size: cover;       /* Cover entire viewport */
+  background-position: center;  /* Center the image */
+  background-repeat: no-repeat; /* No tiling */
+  transition: background-image 0.3s ease-in-out;
+}
+
+/* Portrait orientation */
+@media (orientation: portrait) {
+  body {
+    background-image: url('/assets/background/bg-portrait.jpg');
+  }
+}
+
+/* Landscape orientation (redundant but explicit) */
+@media (orientation: landscape) {
+  body {
+    background-image: url('/assets/background/bg-landscape.jpg');
+  }
+}
+
+/* --- Fullscreen canvas --- */
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  /* Ensure it sits above the overlay */
+  position: relative;
+  z-index: 0;
+}

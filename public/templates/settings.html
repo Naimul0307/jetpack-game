@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Settings</title>
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/settings.css">
+  <link rel="shortcut icon" href="/public/assets/background/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+    <h1>⚙ Game Settings</h1>
+
+    <!-- Background Upload Section -->
+    <div class="setting-row">
+      <label>Landscape Background</label>
+      <input type="file" id="bgLandscapeUpload" accept="image/*">
+      <button type="button" onclick="uploadBackgroundImage('landscape')">Upload</button>
+      <div id="bgLandscapeContainer"></div>
+    </div>
+
+    <div class="setting-row">
+      <label>Portrait Background</label>
+      <input type="file" id="bgPortraitUpload" accept="image/*">
+      <button type="button" onclick="uploadBackgroundImage('portrait')">Upload</button>
+      <div id="bgPortraitContainer"></div>
+    </div>
+
+    <!-- Gift Upload Section -->
+    <div class="setting-row">
+      <label for="giftUpload">Upload Gift Image</label>
+      <input type="file" id="giftUpload" accept="image/*">
+      <button type="button" onclick="uploadImage('gift')">Upload</button>
+    </div>
+    <div id="giftList" class="image-list"></div>
+
+    <!-- Bomb Upload Section -->
+    <div class="setting-row">
+      <label for="bombUpload">Upload Bomb Image</label>
+      <input type="file" id="bombUpload" accept="image/*">
+      <button type="button" onclick="uploadImage('bomb')">Upload</button>
+    </div>
+    <div id="bombList" class="image-list"></div>
+
+    <!-- Santa Image -->
+    <div class="setting-row">
+      <label>Santa Image</label>
+      <input type="file" id="santaUpload" accept="image/*">
+      <button type="button" onclick="uploadPlayerImage('santa')">Upload</button>
+      <div id="santaContainer"></div>
+    </div>
+
+    <!-- Damage Image -->
+    <div class="setting-row">
+      <label>Damage Image</label>
+      <input type="file" id="damageUpload" accept="image/*">
+      <button type="button" onclick="uploadPlayerImage('damage')">Upload</button>
+      <div id="damageContainer"></div>
+    </div>
+
+    <!-- Game Settings Form -->
+    <form class="settings-form">
+      <div class="setting-row">
+        <label for="fontFamily">Font Family</label>
+        <select id="fontFamily">
+          <option value="Arial, sans-serif">Arial</option>
+          <option value="'Nunito', sans-serif">Nunito</option>
+          <option value="'Epunda Sans', sans-serif">Epunda Sans</option>
+          <option value="'Libertinus Sans', sans-serif">Libertinus Sans</option>
+          <option value="'Mozilla Headline', sans-serif">Mozilla Headline</option>
+          <option value="'Aref Ruqaa', serif">Aref Ruqaa</option>
+          <option value="'Cossette Titre', sans-serif">Cossette Titre</option>
+        </select>
+      </div>
+
+      <div class="setting-row">
+        <label for="fontSize">Font Size (px)</label>
+        <input type="number" id="fontSize" value="16" min="10" max="40">
+      </div>
+
+      <div class="setting-row">
+        <label for="time">Game Time (seconds)</label>
+        <input type="number" id="time" value="60">
+      </div>
+
+      <div class="setting-row">
+        <label for="playerSize">Player Image Size</label>
+        <input type="number" id="playerSize" value="230">
+      </div>
+
+      <div class="setting-row">
+        <label for="giftSize">Gift Image Size</label>
+        <input type="number" id="giftSize" value="140">
+      </div>
+
+      <div class="setting-row">
+        <label for="bombSize">Bomb Image Size</label>
+        <input type="number" id="bombSize" value="160">
+      </div>
+
+      <div class="setting-row">
+        <label for="playerSpeed">Player Max Speed</label>
+        <input type="number" id="playerSpeed" step="0.1" value="12">
+      </div>
+
+      <div class="setting-row">
+        <label for="maxGifts">Max Gifts on Screen</label>
+        <input type="number" id="maxGifts" value="5">
+      </div>
+
+      <div class="setting-row">
+        <label for="maxBombs">Max Bombs on Screen</label>
+        <input type="number" id="maxBombs" value="3">
+      </div>
+
+      <div class="setting-row">
+        <label for="giftSpeedMin">Gift Speed (min)</label>
+        <input type="number" id="giftSpeedMin" step="0.1" value="1.5">
+      </div>
+
+      <div class="setting-row">
+        <label for="giftSpeedMax">Gift Speed (max)</label>
+        <input type="number" id="giftSpeedMax" step="0.1" value="3">
+      </div>
+
+      <div class="setting-row">
+        <label for="bombSpeedMin">Bomb Speed (min)</label>
+        <input type="number" id="bombSpeedMin" step="0.1" value="2">
+      </div>
+
+      <div class="setting-row">
+        <label for="bombSpeedMax">Bomb Speed (max)</label>
+        <input type="number" id="bombSpeedMax" step="0.1" value="4">
+      </div>
+
+      <div class="setting-row">
+        <label for="bombHorizontalSpeed">Bomb Horizontal Speed</label>
+        <input type="number" id="bombHorizontalSpeed" step="0.1" value="1.2">
+      </div>
+
+      <!-- Buttons Row -->
+      <div class="button-row">
+        <button type="button" onclick="saveSettings()">💾 Save Settings</button>
+        <button type="button" onclick="window.location.href='/'">🏠 Back to Home</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="/js/settings.js"></script>
+</body>
+</html>

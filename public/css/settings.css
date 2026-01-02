@@ -1,0 +1,190 @@
+/* --- Full-page responsive background --- */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;       /* prevent scrollbars */
+  font-family: var(--font-family);
+  color: var(--text-light);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;    /* center container vertically */
+}
+
+/* Portrait orientation */
+@media (orientation: portrait) {
+  body {
+    background-image: url('/assets/background/bg-portrait.jpg');
+  }
+}
+
+/* Landscape orientation */
+@media (orientation: landscape) {
+  body {
+    background-image: url('/assets/background/bg-landscape.jpg');
+  }
+}
+/* --- Centered Container --- */
+.container {
+  background-color: var(--bg-container);
+  padding: 40px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 20px var(--shadow-container);
+  overflow-y: auto;       /* allow scrolling only inside container if needed */
+  max-height: 90vh;       /* prevent container from exceeding viewport */
+}
+
+/* --- Heading --- */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  text-shadow: 1px 1px 5px var(--shadow-text);
+}
+
+/* --- Form Layout --- */
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.setting-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.setting-row label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.setting-row input,
+.setting-row select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* --- Buttons --- */
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--btn-orange);
+  color: var(--text-light);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--btn-orange-hover);
+  transform: scale(1.05);
+}
+
+/* --- Buttons side by side --- */
+.button-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.button-row button {
+  flex: 1;
+}
+
+/* --- Image previews --- */
+.image-list,
+#bgLandscapeContainer,
+#bgPortraitContainer,
+#santaContainer,
+#damageContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.image-list div,
+#bgLandscapeContainer div,
+#bgPortraitContainer div,
+#santaContainer div,
+#damageContainer div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-container);
+  padding: 5px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px var(--box-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.image-list div:hover,
+#bgLandscapeContainer div:hover,
+#bgPortraitContainer div:hover,
+#santaContainer div:hover,
+#damageContainer div:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px var(--box-shadow);
+}
+
+.image-list img,
+#bgLandscapeContainer img,
+#bgPortraitContainer img,
+#santaContainer img,
+#damageContainer img {
+  border-radius: 8px;
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+/* --- Delete buttons --- */
+.image-list button,
+#bgLandscapeContainer button,
+#bgPortraitContainer button,
+#santaContainer button,
+#damageContainer button {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--red-primary);
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.image-list button:hover,
+#bgLandscapeContainer button:hover,
+#bgPortraitContainer button:hover,
+#santaContainer button:hover,
+#damageContainer button:hover {
+  background-color: var(--red-hover);
+  transform: scale(1.05);
+}
+
+.image-list button::before,
+#bgLandscapeContainer button::before,
+#bgPortraitContainer button::before,
+#santaContainer button::before,
+#damageContainer button::before {
+  content: "🗑️";
+  margin-right: 5px;
+}

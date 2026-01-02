@@ -1,0 +1,29 @@
+santa-jetpack-game/
+│
+├── public/
+│   ├── templates/
+│   │   ├── index.html
+│   │   └── game.html
+│   │
+│   ├── css/
+│   │   └── game.css
+│   │
+│   ├── data/
+│   │   └── gusers.xlsx
+│   │
+│   ├── js/
+│   │   ├── form.js
+│   │   └── game.js
+│   │
+│   └── assets/
+│   ├── santa.png
+│   ├── gifts/
+│   │   ├── gift1.png
+│   │   ├── gift2.png
+│   │   └── gift3.png
+│   │
+│   └── bombs/
+│        ├── bomb1.png
+│        └── bomb2.png
+├── server.js
+├── package.json

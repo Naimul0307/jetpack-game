@@ -1,0 +1,23 @@
+{
+  "name": "jetpack-game",
+  "version": "1.0.0",
+  "description": "Santa Jetpack Game",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "node server.js",
+    "package-win": "electron-packager . \"Santa Jetpack Game\" --platform=win32 --arch=x64 --out=dist --overwrite --icon=public/assets/background/favicon.ico"
+  },
+  "keywords": ["game", "electron", "express", "jetpack", "santa"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "multer": "^2.0.2",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "electron": "^39.2.7",
+    "electron-packager": "^17.1.0"
+  }
+}

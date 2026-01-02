@@ -1,0 +1,66 @@
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Color Variables ===== */
+:root {
+  --font-family: Arial, sans-serif; /* default */
+  --font-style: normal;
+  --font-size: 16px;
+  --game-ui-font-size: 28px;   /* font size for score/time */
+  --game-ui-color: #ffffff;    /* font color */
+
+  /* Text */
+  --text-dark: #333;
+  --text-light: #ffffffd7;
+
+  /* Reds (buttons, headers) */
+  --red-primary: #fff45c;
+  --red-hover: #ffdb3a;
+  --red-bright: #ffea29;
+
+  /* Backgrounds */
+  --bg-dark-1: #1e3c72;
+  --bg-dark-2: #2a5298;
+  --bg-container: rgba(0, 0, 0, 0.6);
+
+  /* Buttons */
+  --btn-orange: #ff9800;
+  --btn-orange-hover: #e68900;
+
+  /* Shadows */
+  --shadow-container:  rgba(0, 0, 0, 0.5);
+  --shadow-text: #000;
+
+  --box-shadow: rgba(0,0,0,0.2);
+  /* Table rows */
+  --row-even: #ffee00f6;
+  --row-odd: #f1f1e8;
+  --row-hover: #ffe0e0;
+  --td-background: rgba(255, 255, 255, 0.85);
+  --td-color: #555;
+}
+
+/* ===== Font Faces ===== */
+@font-face { font-family: 'Aref Ruqaa'; src: url('../font/ArefRuqaa-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Cossette Titre'; src: url('../font/CossetteTitre-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Epunda Sans'; src: url('../font/EpundaSans-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Libertinus Sans'; src: url('../font/LibertinusSans-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Mozilla Headline'; src: url('../font/MozillaHeadline-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Nunito'; src: url('../font/Nunito-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+
+/* ===== Base Body ===== */
+body {
+  font-family: var(--font-family);
+  font-style: var(--font-style);
+  font-size: var(--font-size);
+  color: var(--text-dark);
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
